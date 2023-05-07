@@ -1,0 +1,38 @@
+{
+  "family": "chatgpt-ui",
+  "executionRoleArn": "arn:aws:iam::076744306686:role/ecsExecutionRole",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "chatgpt-ui",
+      "image": "076744306686.dkr.ecr.us-east-1.amazonaws.com/chatgpt-ui:latest",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000
+        }
+      ],
+      "environment": [
+        {
+          "name": "OPENAI_API_KEY",
+          "value": "${OPENAI_API_KEY}"
+        }
+      ],
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+            "awslogs-group": "/ecs/chatgpt-ui",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512"
+}
+

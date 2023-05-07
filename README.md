@@ -1,5 +1,7 @@
 # Chatbot UI
 
+[![Deploy to Amazon ECS](https://github.com/jonhenshaw/chatbot-ui/actions/workflows/aws.yml/badge.svg)](https://github.com/jonhenshaw/chatbot-ui/actions/workflows/aws.yml)
+
 Chatbot UI is an open source chat UI for AI models.
 
 See a [demo](https://twitter.com/mckaywrigley/status/1640380021423603713?s=46&t=AowqkodyK6B4JccSOxSPew).

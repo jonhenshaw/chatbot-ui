@@ -1,5 +1,7 @@
 # ---- Base Node ----
 FROM node:19-alpine AS base
+ARG OPENAI_API_KEY
+ENV OPENAI_API_KEY=$OPENAI_API_KEY
 WORKDIR /app
 COPY package*.json ./
 
